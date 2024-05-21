@@ -16,6 +16,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
     path('post/', include('post.urls')),
+    path('review/', include('review.urls')),
     path('docs/', schema_view.with_ui('swagger'))
 ]
 
