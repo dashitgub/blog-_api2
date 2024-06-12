@@ -91,7 +91,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('DB_NAME'),
-        'USER':config('DB_USER'),
+        'USER':config('DB_USER_'),
         'PASSWORD':config('DB_PASSWORD'),
         'HOST':config('DB_HOST'),
         'PORT':config('DB_PORT')
@@ -160,3 +160,6 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=700000),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1)
 }
+
+CELERY_BROKER_URL='redis://localhost:6379'
+CELERY_RESULT_BACKEND='redis://localhost:6379'
